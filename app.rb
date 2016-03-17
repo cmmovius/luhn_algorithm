@@ -1,6 +1,7 @@
 # require "pry"
 
-orig_num = 4408041234567893
+# orig_num = 4408041234567893 #valid
+orig_num = 1234567890123456 #NOT valid
 
 def digits(n)
   Math.log10(n).floor.downto(0).map { |i| (n/10**i) % 10}
