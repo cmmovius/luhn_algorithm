@@ -1,16 +1,6 @@
-require "pry"
+# require "pry"
 
 orig_num = 4408041234567893
-# split_array = orig_num.to_s.split("")
-#
-# puts split_array
-
-# split_array.each do |i|
-#   split_array = i.to_i
-#   return split_array
-# end
-
-# split_array.each_index
 
 def digits(n)
   Math.log10(n).floor.downto(0).map { |i| (n/10**i) % 10}
@@ -31,4 +21,12 @@ double_join = double_array.join
 double_i = double_join.to_i
 all_split = digits(double_i)
 
-binding.pry
+all_sum = all_split.inject(0){|sum,x| sum + x}
+
+if (all_sum % 10 == 0)
+  puts "Number #{orig_num} is valid!"
+else
+  puts "Number #{orig_num} is NOT valid."
+end
+
+# binding.pry
