@@ -17,14 +17,18 @@ def digits(n)
 end
 
 array = digits(orig_num)
+double_array = []
 
 array.each_index do |index|
   if (index % 2 == 0)
-    double_array = array[index] * 2
+    double_array << array[index] * 2
   else
-    double_array = array[index]
+    double_array << array[index]
   end
-  puts double_array
 end
+
+double_join = double_array.join
+double_i = double_join.to_i
+all_split = digits(double_i)
 
 binding.pry
